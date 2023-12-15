@@ -16,3 +16,13 @@ We start off with an `nmap` scan.
 ...
 ```
 
+# Foothold
+
+## User Flag
+
+# Root Flag
+
+# References
+
+- 
+- 
