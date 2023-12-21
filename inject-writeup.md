@@ -1,6 +1,6 @@
 # Hack The Box Inject Writeup
 
-![inject title card](images/inject//inject.png)
+![inject title card](images/inject/inject.png)
 
 Inject is an easy difficulty machine from Hack The Box. 
 
@@ -21,7 +21,6 @@ nmap -sC -sV TARGET-IP > scan.txt
 After we let `nmap` run for a bit, we see the following results:
 
 ```
-Starting Nmap 7.92 ( https://nmap.org ) at 2023-10-12 23:00 NZDT
 Nmap scan report for TARGET-IP
 Host is up (0.048s latency).
 Not shown: 998 closed tcp ports (conn-refused)
