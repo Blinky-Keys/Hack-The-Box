@@ -80,18 +80,30 @@ The [Searchor Github respository](https://github.com/ArjunSharda/Searchor) shows
 
 There we have it, one of the project collaborators created an issue to fix the dangerous use of `eval`. If we open up the issue and go to the `Commits` tab, we can view the diff to see what was changed. 
 
-![diff](images/busqueda/busqueda-diff.PNG)
+![searchor diff](images/busqueda/busqueda-diff.PNG)
 
-Here we can see the structure of the code *before* the fix was merged into the project. The `search` function uses `eval` to craft the URL as a format string. Notice that the `query` parameter is being inserted into `eval` without any kind of sanitization. This is our entry point. 
+Here we can see the structure of the code *before* the fix was merged into the project. The `search` function uses `eval` to craft the URL as a format string. Notice that the `query` parameter is being inserted into `eval` without any kind of sanitization. This is likely going to be our entry point. 
+
+## Searcher
+
+Now that we know the library that the app is using has an unsafe `eval` flaw in it, let's see how the *Searcher website* works. If we open up Burp Suite and route our web traffic through its proxy, we can observe and mess with the requests that are sent. 
+
+![search request](images/busqueda/busqueda-search.PNG)
+
+It looks to be a simple POST request, with the chosen search engine and query being sent as the payload. To play around with the request, hit `CTRL+R` to send it to the Burp Repeater. 
 
 # Foothold
+
+There are plenty of pre-written scripts that will exploit the `Searchor` arbitrary code execution bug for you, but being able to exploit something manually is still an important skill to have. This is especially true for new vulnerabilities that appear which may not have any proof-of-concept code available. 
 
 
 
 ## User Flag
 
 
+
 # Privilege Escalation
+
 
 
 ## Root Flag
@@ -101,4 +113,10 @@ Here we can see the structure of the code *before* the fix was merged into the p
 # References
 
 - 
+- 
+
+# Tools Used
+
+- [Burp Suite](https://portswigger.net/burp/communitydownload)
+- [Snyk Vulnerability Database - searchor@2.4.0](https://security.snyk.io/package/pip/searchor/2.4.0)
 - 

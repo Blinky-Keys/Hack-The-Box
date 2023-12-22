@@ -219,7 +219,7 @@ rhost = "TARGET-IP"
 rport = 8080
 ```
 
-## Foothold
+# Foothold
 
 After setting the target and attacking IP addresses and ports, we need to start a listener on the same port as defined by `lport`. 
 
@@ -428,3 +428,8 @@ Congratulations, you just pwned Inject!
 - [Spring CVE-2022-22963 Security Advisory](https://spring.io/security/cve-2022-22963)
 - [CVE-2022-22963 Exploit](https://github.com/randallbanner/Spring-Cloud-Function-Vulnerability-CVE-2022-22963-RCE)
 - [Ansible Documentation - Shell](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/shell_module.html#examples)
+
+# Tools Used
+
+- [nmap](https://nmap.org)
+- [Burp Suite](https://portswigger.net/burp/communitydownload)
