@@ -100,7 +100,7 @@ Since we know that the web app is using `eval` in a dangerous way, we can try to
 
 To start out, let's see what happens if we make a request similar to the one above, but then add in a `'` at the end of our query, like so:
 
-![single quote request](images/busqueda/busqueda%20request.png)
+![single quote request](images/busqueda/busqueda-request.png)
 
 The reason we're using a `'` character is because the `searchor` source code uses double quotes (`"`) to enclose the format string, so we need to use single quotes to avoid interfering with that. The parameters in the format string are also enclosed in single quotes. 
 
