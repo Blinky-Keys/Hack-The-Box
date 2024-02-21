@@ -43,6 +43,8 @@ Looking at the output, we can see the following ports are open:
 
 We can also see that `nmap` did not follow the redirect to `http://searcher.htb`, so let's add that to our hosts file. 
 
+<!-- Add some text here why it's necessary to add things to hosts file -->
+
 ```bash
 sudo -- sh -c "echo TARGET-IP searcher.htb >> /etc/hosts"
 ```
@@ -91,6 +93,8 @@ Now that we know the library that the app is using has an unsafe `eval` flaw in 
 ![search request](images/busqueda/busqueda-search.PNG)
 
 It looks to be a simple POST request, with the chosen search engine and query being sent as the payload. To play around with the request, hit `CTRL+R` to send it to the Burp Repeater. 
+
+<!-- Maybe a quick one-liner about burp suite and burp repeater? -->
 
 ## Manual Exploitation
 
@@ -154,6 +158,8 @@ Here's a breakdown of the different components in our request:
 - `system()` - execute any provided command in a subshell
 
 # Foothold
+
+<!-- Quick explanation of what a reverse shell is, for the uninformed, and why we want to do this -->
 
 A great resource for reverse shells is [revshells.com](https://www.revshells.com). All we need to do is insert our attacking machine's IP, the port we'll receive our shell on, and choose the type of shell we'd like. For this machine, we'll use `Bash -i`. 
 
@@ -306,6 +312,8 @@ if engine in Engine.__members__.keys():
     r = subprocess.run(arg_list, capture_output=True)
 ```
 
+<!-- MAYBE: explain this code a bit, explain the subprocess command etc -->
+
 Let's keep looking around. 
 
 ## Sudo
@@ -343,6 +351,8 @@ svc@busqueda:~$
 ```
 
 Now we're given some options relating to `docker`, so we should assume that there must be some docker containers running on the box. If you're not familiar with `docker`, it is highly recommended that you go and do some learning about it. You can start with [this youtube video](https://www.youtube.com/watch?v=Gjnup-PuquQ). 
+
+<!-- Why do you need to run the docker-ps script instead of just running `docker ps` as sudo? -->
 
 Let's run the checkup script with the first option, `docker-ps`, to see the containers that are running on the box. 
 
@@ -431,6 +441,8 @@ A `path` is the unique location of a resource in the file system. An `absolute p
 Creating our own `full-checkup.sh` script, and then running the `system-checkup.py` script *outside* of `/opt/scripts` will mean that *our* script will be executed. This happens because our script will have the same name as the one referenced in the source code above, and the script is being called *relative to our current working directory*. 
 
 ## Root Flag
+
+<!-- Im confused about this part. Cant you just `sudo su` to get root? If the `svc` user has sudo access than it should be able to log in as root, unless that's explicitly disabled. -->
 
 To get our root flag, we're going to get another reverse shell, this time as `root`. To do this, we need to:
 
