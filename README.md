@@ -1,7 +1,7 @@
 # Hack-The-Box
 Writeups for retired Hack The Box machines and challenges. 
 
-## Machines
+<!-- ## Machines
 
 ### Easy
 
@@ -13,4 +13,4 @@ Writeups for retired Hack The Box machines and challenges.
 
 ### Very Easy
 
-- [Fast Carmichael](https://github.com/Blinky-Keys/Hack-The-Box/blob/main/challenges/fast-carmichael-writeup.md)
+- [Fast Carmichael](https://github.com/Blinky-Keys/Hack-The-Box/blob/main/challenges/fast-carmichael-writeup.md) -->
