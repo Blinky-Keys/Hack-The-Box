@@ -1,6 +1,10 @@
 # Hack-The-Box
 Writeups for retired Hack The Box machines and challenges. 
 
+# ❗ Writeups Relocated ❗
+
+All writeups are now posted on my website [nathan-ellison.com](https://nathan-ellison.com/ctf-writeups/hackthebox). 
+
 <!-- ## Machines
 
 ### Easy
